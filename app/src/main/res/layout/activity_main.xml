@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bannerDescription"
-        app:srcCompat="@mipmap/orange_profile_icon" />
+        app:srcCompat="@mipmap/orange_login3_icon_foreground" />
 
     <EditText
         android:id="@+id/email"

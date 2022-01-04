@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -91,8 +92,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    //go to home page, lecturer page , do that with if else
+                    if(user.isEmailVerified()){
+
+                        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+
+                    }else{
+                        user.sendEmailVerification();
+                        Toast.makeText(MainActivity.this, "Check your email and verify your account!", Toast.LENGTH_LONG).show();
+                    }
+
+
                 }else{
                     Toast.makeText(MainActivity.this, "Failed to login! Please check your email and password!", Toast.LENGTH_LONG).show();
                 }

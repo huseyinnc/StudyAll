@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bannerDescriptionUP"
-        app:srcCompat="@mipmap/orange_signup_icon_foreground" />
+        app:srcCompat="@mipmap/orange_signup2_icon_foreground" />
 
     <EditText
         android:id="@+id/nameUP"
