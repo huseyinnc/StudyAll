@@ -142,13 +142,23 @@
 
     <ImageButton
         android:id="@+id/logoutButton"
-        android:layout_width="84dp"
-        android:layout_height="92dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="80dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/orange_logout2_icon_foreground" />
+        app:srcCompat="@mipmap/logout5_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/notesButton"
+        android:layout_width="80dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/notes3_icon_foreground" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

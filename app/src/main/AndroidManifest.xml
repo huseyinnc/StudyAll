@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyAll">
         <activity
+            android:name=".NotesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPassword"
             android:exported="false" />
         <activity

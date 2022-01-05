@@ -25,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     private String UserID;
 
     private ImageButton logout;
+    private ImageButton notesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,14 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(ProfileActivity.this,MainActivity.class));
+            }
+        });
+
+        notesButton = (ImageButton) findViewById(R.id.notesButton);
+        notesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,NotesActivity.class));
             }
         });
 

@@ -3,6 +3,7 @@ package com.example.studyall;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -62,6 +63,7 @@ public class ResetPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(ResetPassword.this, "Check your email to reset your password!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(ResetPassword.this,MainActivity.class));
                 }else{
                     Toast.makeText(ResetPassword.this, "Try again! Something went wrong!", Toast.LENGTH_LONG).show();
                 }
