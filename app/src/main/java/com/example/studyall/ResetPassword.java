@@ -22,7 +22,7 @@ public class ResetPassword extends AppCompatActivity {
     private Button EditresetPassword;
     private ProgressBar EditprogressBar;
 
-    FirebaseAuth auth;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class ResetPassword extends AppCompatActivity {
         EditresetPassword = (Button) findViewById(R.id.resetPassword);
         EditprogressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        auth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         EditresetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +58,7 @@ public class ResetPassword extends AppCompatActivity {
         }
 
        EditprogressBar.setVisibility(View.VISIBLE);
-        auth.sendPasswordResetEmail(emailReset).addOnCompleteListener(new OnCompleteListener<Void>() {
+        mAuth.sendPasswordResetEmail(emailReset).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

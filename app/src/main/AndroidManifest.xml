@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyAll">
         <activity
+            android:name=".CreateNotesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
             android:name=".NotesActivity"
             android:exported="false" />
         <activity
