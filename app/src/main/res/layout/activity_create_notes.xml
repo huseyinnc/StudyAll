@@ -18,7 +18,7 @@
             android:id="@+id/createtitlenote"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter which course you will take notes about"
+            android:hint="Enter which course you will take"
             android:paddingTop="10dp"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -33,10 +33,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbarofcreatenote"
+        android:layout_marginTop="16dp"
         android:background="#faf7f7"
         android:gravity="top|left"
+        android:hint="Enter your note content about course here"
         android:padding="15dp"
-        android:text="Enter your note content here"
         android:textColor="@color/black"
         android:textSize="15sp">
 
@@ -53,7 +54,7 @@
         android:layout_marginBottom="30dp"
         android:background="#A1F4FB"
         android:src="@mipmap/saveicon_icon_foreground"
-        app:maxImageSize="40dp"
+        app:maxImageSize="50dp"
 
         >
 
