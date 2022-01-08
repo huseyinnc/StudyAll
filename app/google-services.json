@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "212866284688",
-    "project_id": "studyall-35dcc",
-    "storage_bucket": "studyall-35dcc.appspot.com"
+    "project_number": "844913788941",
+    "firebase_url": "https://studyall-86d13-default-rtdb.firebaseio.com",
+    "project_id": "studyall-86d13",
+    "storage_bucket": "studyall-86d13.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:212866284688:android:986343fd23bf3e36042c15",
+        "mobilesdk_app_id": "1:844913788941:android:2d585b2976f7bfc80a6d44",
         "android_client_info": {
           "package_name": "com.example.studyall"
         }
       },
       "oauth_client": [
         {
-          "client_id": "212866284688-8eavra3hk34st8bon279pci6f6qrsqq0.apps.googleusercontent.com",
+          "client_id": "844913788941-ssb2le4dosporj8qtjepd1fmjln17qov.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDtzfL-QpjArOL1KtMnaBubq3eXbn9CcJg"
+          "current_key": "AIzaSyDfRongDSHdFsuNS1XcjECZREsbs1d709Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "212866284688-8eavra3hk34st8bon279pci6f6qrsqq0.apps.googleusercontent.com",
+              "client_id": "844913788941-ssb2le4dosporj8qtjepd1fmjln17qov.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

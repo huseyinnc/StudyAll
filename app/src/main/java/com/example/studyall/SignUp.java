@@ -131,6 +131,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                                     if (task.isSuccessful()){
                                         Toast.makeText(SignUp.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
                                         progressBarUP.setVisibility(View.GONE);
+                                        startActivity(new Intent(SignUp.this,MainActivity.class));
 
                                         //redirect to login layout
                                     }else{
