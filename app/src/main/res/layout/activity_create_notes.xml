@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Enter which course you will take"
-            android:paddingTop="10dp"
+            android:paddingTop="12dp"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold">
@@ -54,7 +54,7 @@
         android:layout_marginBottom="30dp"
         android:background="#A1F4FB"
         android:src="@mipmap/saveicon_icon_foreground"
-        app:maxImageSize="50dp"
+        app:maxImageSize="56dp"
 
         >
 

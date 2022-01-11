@@ -25,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class NotesActivity extends AppCompatActivity {
-    FloatingActionButton mcreatenotefab;
+    FloatingActionButton createnotefab;
     FirebaseAuth firebaseAuth;
     RecyclerView recyclerView;
     StaggeredGridLayoutManager staggeredGridLayoutManager;
@@ -47,8 +47,8 @@ public class NotesActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("All Notes");
 
 
-        mcreatenotefab = findViewById(R.id.createnotefab);
-        mcreatenotefab.setOnClickListener(new View.OnClickListener() {
+        createnotefab = findViewById(R.id.createnotefab);
+        createnotefab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -88,9 +88,9 @@ public class NotesActivity extends AppCompatActivity {
 
     }
 
-    public static class NoteViewHolder extends RecyclerView.ViewHolder {
-        final TextView notestitle;
-        final TextView notescontent;
+    public class NoteViewHolder extends RecyclerView.ViewHolder {
+        private TextView notestitle;
+        private TextView notescontent;
         LinearLayout notes;
 
 
@@ -130,7 +130,7 @@ public class NotesActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if(noteAdapter!=null){
-            noteAdapter.startListening();
+            noteAdapter.stopListening();
         }
 
     }
