@@ -16,11 +16,18 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -31,6 +38,7 @@ public class NotesActivity extends AppCompatActivity {
     StaggeredGridLayoutManager staggeredGridLayoutManager;
     FirebaseUser firebaseUser;
     FirebaseFirestore firestore;
+    DatabaseReference databaseReference;
 
     FirestoreRecyclerAdapter<firebasemodel,NoteViewHolder> noteAdapter;
 
@@ -46,7 +54,7 @@ public class NotesActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("All Notes");
 
-
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Notes").child(firebaseAuth.getCurrentUser().getUid());
         createnotefab = findViewById(R.id.createnotefab);
         createnotefab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +64,8 @@ public class NotesActivity extends AppCompatActivity {
 
             }
         });
+
+
         //match the CreateNotesActivity about collection and document
         Query query = firestore.collection("notes").document(firebaseUser.getUid()).collection("myNotes").orderBy("title",Query.Direction.ASCENDING);
 
@@ -80,6 +90,9 @@ public class NotesActivity extends AppCompatActivity {
             }
         };
 
+
+
+
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         staggeredGridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
@@ -87,6 +100,8 @@ public class NotesActivity extends AppCompatActivity {
         recyclerView.setAdapter(noteAdapter);
 
     }
+
+
 
     public class NoteViewHolder extends RecyclerView.ViewHolder {
         private TextView notestitle;
@@ -100,6 +115,7 @@ public class NotesActivity extends AppCompatActivity {
             notescontent = itemView.findViewById(R.id.notescontent);
             notes = itemView.findViewById(R.id.notes);
         }
+
     }
 
 
@@ -123,6 +139,36 @@ public class NotesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         noteAdapter.startListening();
+        /*FirebaseRecyclerAdapter<firebasemodel, NoteViewHolder> firebaseRecyclerAdapter =new FirebaseRecyclerOptions.Builder<firebasemodel>() {
+            @NonNull
+            @Override
+            public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return null;
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull firebasemodel model) {
+                String noteID = getRef(position).getKey();
+                databaseReference.child(noteID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String title = snapshot.child("title").toString();
+                        String content = snapshot.child("content").toString();
+
+                        holder.notestitle.setText(firebasemodel.getTitle());
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+
+        };
+
+         */
 
     }
 

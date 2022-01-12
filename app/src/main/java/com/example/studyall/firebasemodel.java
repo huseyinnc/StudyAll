@@ -1,8 +1,8 @@
 package com.example.studyall;
 
 public class firebasemodel {
-    private String title;
-    private String content;
+    private static String title;
+    private static String content;
 
 
     public firebasemodel(){
@@ -14,7 +14,7 @@ public class firebasemodel {
         this.content=content;
     }
 
-    public String getTitle() {
+    public static String getTitle() {
         return title;
     }
 
